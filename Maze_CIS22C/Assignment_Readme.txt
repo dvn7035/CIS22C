@@ -122,3 +122,19 @@ Decision points:
 (1,3) (2,6) (4,5) (5,2) (6,2) (7,2) (7,3) (7,6)
 
  
+
+Honors Requirement
+- When printing the solved maze, only print the path that is successful in reaching the exit of the maze
+
+Solved maze:
+
+ * * * * X X X X
+ X X X * * * * X
+ . . . . X X * .
+ X X X X X * * X
+ X X * * * * X X
+ X . * X X . X X
+ . . * . X X . .
+ X . * * * * * *
+
+You can develop an additional algorithm or modify the existing solveMaze algorithm to do the requirement. However, your solution must not involve copying the maze multiple times, or walking the entire maze (all rows and all columns) too many times.
