@@ -1,0 +1,77 @@
+There are 1370 words in the dictionary
+The size of the dictionary is  <removed - in order not to influence anyone>
+Load factor is 57.15%
+
+Collisions:
+
+Index:  427  probes: 9
+Index:  428  probes: 8
+Index:  429  probes: 4
+Index:  430  probes: 9
+Index:  431  probes: 8
+Index:  432  probes: 6
+Index:  433  probes: 8
+Index:  434  probes: 9
+Index:  435  probes: 4
+Index:  436  probes: 7
+Index:  437  probes: 5
+Index:  438  probes: 3
+Index:  439  probes: 4
+Index:  440  probes: 5
+Index:  441  probes: 4
+Index:  442  probes: 7
+Index:  443  probes: 4
+Index:  444  probes: 6
+Index:  445  probes: 3
+Index:  446  probes: 3
+Index:  447  probes: 6
+Index:  448  probes: 5
+Index:  449  probes: 3
+Index:  450  probes: 4
+Index:  451  probes: 3
+Index:  452  probes: 2
+Index:  453  probes: 3
+Index:  454  probes: 4
+Index:  456  probes: 2
+Index:  457  probes: 3
+Index:  463  probes: 2
+
+ <not all index and probes are shown to save space>
+
+Max number of probes is 9 at:
+index  422: club,132428495 done,102812628 edit,94159529 fire,83845349 gold,10749
+7778 kind,70420316 late,65574606 near,81652767 road,131800620 same,234822585
+
+index  427: book,330959949 does,314018806 give,140688602 kids,96602880 left,1717
+52631 mark,95606752 meet,93275872 plan,160746244 seen,78365291 than,502609275
+
+index  434: away,112837472 bush,71289039 drug,79424420 easy,125548527 ever,10026
+4634 june,163951797 open,239670331 paul,85262640 role,73689002 when,650621178
+
+index  537: below,145701629 given,125542966 human,160573748 least,111229798 logi
+n,144200144 major,122592252 might,123196001 small,208371878 these,541003982 whil
+e,226194991
+
+index  649: around,178810033 common,107839275 during,206364495 format,111279626
+living,107215961 number,383787805 really,162033390 season,76445684 thanks,913984
+11 united,299280163
+
+No collision: 216 words     
+            <this is a terrible number of no collision, you should beat this value>
+
+Enter filename: words1.txt
+Found 20 words
+Not found 11 words
+tomorrow bet bottom dollar tomorrow thinkin' tomorrow clears cobwebs sorrow till
+
+
+Continue [y/n]: y
+Enter filename: words2.txt
+Found 140 words
+Not found 40 words
+seventeen naively chose expensive stanford parents' savings spent tuition could
+n't I spending saved entire decided drop trust pretty scary decisions minute drop
+ped classes didn't begin dropping ones looked interesting
+
+Continue [y/n]: n
+Press any key to continue . . .
