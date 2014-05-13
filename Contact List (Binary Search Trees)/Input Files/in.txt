@@ -1,0 +1,14 @@
+Language Arts,408.864.8547,deanza.edu/languagearts/
+Bus/CIS,408.864.8797,www.deanza.edu/buscs/
+PSME,408.864.5695,nebula.deanza.edu/PSME_Division/PSME.html
+Counseling,408.864.5400,www.deanza.edu/counseling/
+Distance Learning,408.864.8969,www.deanza.edu/distance/
+Library,408.864.8761,deanza.edu/library/
+Health Services,408.864.8732,deanza.edu/healthservices/
+Admissions,408.864.5300,deanza.edu/admissions/appregmenu.html
+Bookstore,408.864.8701,www.deanza.edu/bookstore/
+Honors Program,408-864-8833,faculty.deanza.fhda.edu/honors/
+Transfer Planning,408.864.8841,deanza.edu/transfer/
+Career Services,408.864.5400,deanza.edu/counseling/career/
+Financial Aid,408.864.8718,www.deanza.fhda.edu/financialaid/
+Workforce Education,408.864.8937,www.deanza.edu/workforceed/
