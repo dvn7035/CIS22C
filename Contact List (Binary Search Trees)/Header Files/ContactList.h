@@ -1,3 +1,9 @@
+/*
+Lab 4
+Created by: David Nguyen
+Date: 5/12/14
+*/
+
 #ifndef _CONTACT_LIST
 #define _CONTACT_LIST
 
@@ -15,7 +21,7 @@ private:
 public:
 	ContactList();
 	int how_many_contacts() {return number_of_contacts;}
-	void list_alphabetical_order(); 
+	void list_alphabetical_order();
 	void list_reverse_alphabetical_order();
 	void delete_contact();
 	void search_contact();

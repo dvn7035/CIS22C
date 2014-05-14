@@ -1,3 +1,8 @@
+/*
+Lab 4
+Created by: David Nguyen
+Date: 5/12/14
+*/
 #ifndef _CONTACT
 #define _CONTACT
 
@@ -6,7 +11,7 @@
 
 using namespace std;
 
-class Contact 
+class Contact
 {
 private:
 	string name;

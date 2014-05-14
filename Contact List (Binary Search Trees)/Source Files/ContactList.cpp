@@ -1,3 +1,9 @@
+/*
+Lab 4 
+Created by: David Nguyen
+Date: 5/12/14
+*/
+
 #include "ContactList.h"
 #include "Contact.h"
 #include "BinaryTree.h"

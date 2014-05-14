@@ -1,7 +1,7 @@
-// Binary tree abstract base class
+// Binary Search Tree ADT
 // Created by Frank M. Carrano and Tim Henry.
-// Modified by:
- 
+// Modified by: David Nguyen
+
 #ifndef _BINARY_TREE
 #define _BINARY_TREE
 
@@ -18,24 +18,24 @@ public:
 	// "admin" functions
  	BinaryTree()						{rootPtr = 0; count = 0;}
 	BinaryTree(const BinaryTree<ItemType> & tree)	{rootPtr = copyTree(tree.rootPtr);}
-	virtual ~BinaryTree()				{ destroyTree(rootPtr); }		
+	virtual ~BinaryTree()				{ destroyTree(rootPtr); }
 	BinaryTree & operator=(const BinaryTree & sourceTree);
-   
+
 	// common functions for all binary trees
  	bool isEmpty() const				{return count == 0;}
 	int size() const					{return count;}
 	void clear()						{destroyTree(rootPtr); rootPtr = 0; count = 0;}
 	void preOrder(void visit(ItemType &)) const		{_preorder(visit, rootPtr);}
 	void inOrder(void visit(ItemType &)) const		{_inorder(visit, rootPtr);}
-	void postOrder(void visit(ItemType &)) const	{_postorder(visit, rootPtr);}	
+	void postOrder(void visit(ItemType &)) const	{_postorder(visit, rootPtr);}
 	void reverseOrder (void visit(ItemType &)) const {_reverseorder(visit, rootPtr);}
 
 	// abstract functions to be implemented by derived class
-	virtual bool insert(const ItemType & newData) = 0; 
-	virtual bool remove(const ItemType & data) = 0; 
+	virtual bool insert(const ItemType & newData) = 0;
+	virtual bool remove(const ItemType & data) = 0;
 	virtual bool getEntry(const ItemType & anEntry, ItemType & returnedItem) const = 0;
 
-private:   
+private:
 	// delete all nodes from the tree
 	void destroyTree(BinaryNode<ItemType>* nodePtr);
 
@@ -47,12 +47,12 @@ private:
 	void _inorder(void visit(ItemType &), BinaryNode<ItemType>* nodePtr) const;
 	void _postorder(void visit(ItemType &), BinaryNode<ItemType>* nodePtr) const;
     void _reverseorder(void visit(ItemType &), BinaryNode<ItemType>* nodePtr) const;
-}; 
+};
 
 //////////////////////////////////////////////////////////////////////////
 
 template<class ItemType>
-BinaryNode<ItemType>* BinaryTree<ItemType>::copyTree(const BinaryNode<ItemType>* nodePtr) 
+BinaryNode<ItemType>* BinaryTree<ItemType>::copyTree(const BinaryNode<ItemType>* nodePtr)
 {
 	BinaryNode<ItemType>* newNodePtr = 0;
 	if(nodePtr != 0)
@@ -64,7 +64,7 @@ BinaryNode<ItemType>* BinaryTree<ItemType>::copyTree(const BinaryNode<ItemType>*
 	}
 	//else there is an empty tree
     return newNodePtr;
-}  
+}
 
 template<class ItemType>
 void BinaryTree<ItemType>::destroyTree(BinaryNode<ItemType>* nodePtr)
@@ -73,10 +73,10 @@ void BinaryTree<ItemType>::destroyTree(BinaryNode<ItemType>* nodePtr)
 	{
 		destroyTree(nodePtr->getLeftPtr());
 		destroyTree(nodePtr->getRightPtr());
-		delete nodePtr; 
+		delete nodePtr;
 	}
 	return;
-}  
+}
 
 template<class ItemType>
 void BinaryTree<ItemType>::_preorder(void visit(ItemType &), BinaryNode<ItemType>* nodePtr) const
@@ -86,8 +86,8 @@ void BinaryTree<ItemType>::_preorder(void visit(ItemType &), BinaryNode<ItemType
 		visit(nodePtr->getItem());
 		_preorder(visit, nodePtr->getLeftPtr());
 		_preorder(visit, nodePtr->getRightPtr());
-	} 
-}  
+	}
+}
 
 template<class ItemType>
 void BinaryTree<ItemType>::_inorder(void visit(ItemType &), BinaryNode<ItemType>* nodePtr) const
@@ -98,7 +98,7 @@ void BinaryTree<ItemType>::_inorder(void visit(ItemType &), BinaryNode<ItemType>
 		visit(nodePtr->getItem());
 		_inorder (visit, nodePtr->getRightPtr());
 	}
-}  
+}
 
 template<class ItemType>
 void BinaryTree<ItemType>::_postorder(void visit(ItemType &), BinaryNode<ItemType>* nodePtr) const
@@ -109,7 +109,7 @@ void BinaryTree<ItemType>::_postorder(void visit(ItemType &), BinaryNode<ItemTyp
 		_postorder(visit, nodePtr->getRightPtr());
 		visit (nodePtr->getItem());
 	}
-}  
+}
 
 template<class ItemType>
 void BinaryTree<ItemType>::_reverseorder(void visit(ItemType &), BinaryNode<ItemType>* nodePtr) const
@@ -120,7 +120,7 @@ void BinaryTree<ItemType>::_reverseorder(void visit(ItemType &), BinaryNode<Item
 		visit (nodePtr->getItem());
 		_reverseorder(visit, nodePtr->getLeftPtr());
 	}
-}  
+}
 
 
 
@@ -129,5 +129,5 @@ BinaryTree<ItemType> & BinaryTree<ItemType>::operator=(const BinaryTree<ItemType
 {
 	copyTree (sourceTree, rootPtr);
 	return *this;
-}  
+}
 #endif
