@@ -17,7 +17,7 @@ class Maze
 {
 private:
 	char matrix[MAX][MAX];       // 2D array of characters for the maze
-	class Position Current;
+	Position Current;
 	ArrayStack<Position> Decision_Stack;
 	LinkedQueue<Position> Decision_Queue;
 public:
@@ -26,5 +26,5 @@ public:
 	void print_Decision_Points ();
 	bool solved ();
 	bool atEnd (Position Current);
-	int countAvailablePaths ();
+	int countAvailablePaths (bool& bottom, bool& right, bool& left, bool& top);
 };

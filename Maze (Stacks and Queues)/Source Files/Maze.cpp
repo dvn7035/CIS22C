@@ -54,28 +54,31 @@ bool Maze::atEnd (Position Current)
 
 // countAvailablePaths () will count how many paths can be taken from the current position
 // and return it
-int Maze::countAvailablePaths ()
+int Maze::countAvailablePaths (bool& bottom, bool& right, bool& left, bool& top)
 {
 	int paths = 0;
 	int curCol = Current.getColumn();
 	int curRow = Current.getRow();
-	if (curRow-1 >= 0 && matrix[curRow-1][curCol] == '.') //top is clear
-	{
-		paths++;
-	}
 	if (curRow+1 < MAX && matrix[curRow+1][curCol] == '.' )  //bottom is clear
 	{
 		paths++;
-	}
-	if (curCol-1 >= 0 && matrix[curRow][curCol-1] == '.') //left is clear
-	{
-		paths++;
+		bottom = true;
 	}
 	if ( curCol+1 < MAX && matrix[curRow][curCol+1] == '.')  //right is clear
 	{
 		paths++;
+		right = true;
 	}
-
+	if (curCol-1 >= 0 && matrix[curRow][curCol-1] == '.') //left is clear
+	{
+		paths++;
+		left = true;
+	}
+	if (curRow-1 >= 0 && matrix[curRow-1][curCol] == '.') //top is clear
+	{
+		paths++;
+		top = true;
+	}
 	return paths;
 }
 
@@ -87,13 +90,18 @@ bool Maze::solved ()
 	bool solvable = true;
 	int curCol;
 	int curRow;
+	bool topClear;
+	bool bottomClear;
+	bool rightClear;
+	bool leftClear;
 
 	while ( !atEnd(Current) && solvable)
 	{
 		curCol = Current.getColumn();
 		curRow = Current.getRow();
 		matrix[curRow][curCol] = '+';
-		pathCount = countAvailablePaths();
+		topClear = bottomClear = rightClear = leftClear = false;
+		pathCount = countAvailablePaths(bottomClear, rightClear, leftClear, topClear);
 		if (pathCount > 1)
 		{
 			Decision_Stack.push (Current);
@@ -101,23 +109,22 @@ bool Maze::solved ()
 		}
 		if (pathCount >= 1)
 		{
-			if (curRow - 1 >= 0 && matrix[curRow - 1][curCol] == '.') //top is clear
-			{
-				Current.setRow(curRow - 1);
-			}
-			else if (curRow + 1 < MAX && matrix[curRow + 1][curCol] == '.') //bottom is clear
+			if (bottomClear) //bottom is clear
 			{
 				Current.setRow(curRow + 1);
 			}
-			else if (curCol - 1 >= 0 && matrix[curRow][curCol - 1] == '.') //left is clear
-			{
-				Current.setColumn(curCol-1);
-			}
-			else if (curCol + 1 < MAX && matrix[curRow][curCol + 1] == '.') //right is clear
+			else if (rightClear) //right is clear
 			{
 				Current.setColumn(curCol+1);
 			}
-
+			else if (leftClear) //left is clear
+			{
+				Current.setColumn(curCol-1);
+			}
+			else if (topClear) //top is clear
+			{
+				Current.setRow(curRow - 1);
+			}
 		}
 		else 
 		{

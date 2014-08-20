@@ -11,7 +11,7 @@ using namespace std;
 int main ()
 {
 	Maze maze;
-
+	
 	cout << "Maze: ";
 	maze.print();
 	if ( maze.solved() )	
@@ -22,5 +22,8 @@ int main ()
 	}
 	else
 		cout << "No solution\n";
+
+	char stop;
+	cin >> stop; 
 	return 0;
 }
