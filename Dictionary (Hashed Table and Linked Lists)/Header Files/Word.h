@@ -1,4 +1,4 @@
-#ifndef _WORD
+#ifndef _WORD							//////////// documentation with your name
 #define _WORD
 #include<string>
 

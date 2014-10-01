@@ -68,7 +68,7 @@ void LinkedList<ItemType>::display() const
 	Node<ItemType>* currPtr = headPtr;		// start at front of list
 	while (currPtr != 0)					// walk until end of list
 	{
-		cout << currPtr->getItem();	// display data of every node
+		cout << currPtr->getItem() << " ";	// display data of every node
 		currPtr = currPtr->getNext();		// go to next node
 	}
 	cout << endl << endl;

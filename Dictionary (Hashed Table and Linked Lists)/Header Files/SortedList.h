@@ -1,5 +1,5 @@
 // Sorted Linked list ADT
-//By David Nguyen and Ahmed Ahmed
+//By David Nguyen and Ahmed Ahmed   /////////// you should work on your own for the labs
 #ifndef _SORTED_LIST
 #define _SORTED_LIST
 
@@ -65,8 +65,12 @@ bool SortedList<ItemType>::remove(const ItemType& anEntry)
 			search = search->getNext();
 		}	
 	}
-	if (found) {
-		previous->setNext(search->getNext());
+	if (found) 
+	{
+		if (previous == NULL)
+			headPtr = search->getNext();
+		else
+			previous->setNext(search->getNext());  
 		itemCount--;
 		delete search;
 	}
@@ -80,7 +84,7 @@ bool SortedList<ItemType>::getEntry(const ItemType & target, ItemType & returned
 	bool found = false;
 	Node<ItemType>* pos = headPtr;
 
-	//walk array until entry greater than to current node
+	//walk array until entry greater than the current node
 	while (pos != 0 &&  pos->getItem() < target )
 	{
 		pos = pos->getNext();
